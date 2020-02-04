@@ -1,8 +1,16 @@
-<div>
-  <h1>{{ value.time }}</h1>
-    <ul>
-        <li *ngIf="value.subject">Subject : {{ value.subject }}</li>     
-        <li *ngIf="value.location">Location : {{ value.location }}</li>
-        <li *ngIf="value.description">Description : {{ value.description }}</li>
-    </ul>
-</div>
+
+<div *ngIf="true; then isLogged; else loggedOut">
+    
+  </div>
+
+  <ng-template #loggedOut>
+    Please friend, login.
+  </ng-template>
+
+  <ng-template #isLogged>
+        <div>Welcome back, friend.</div>
+  </ng-template>
+  
+<p class="p-3 blue-grey lighten-5 blue-grey lighten-5" *ngIf="value.description">
+  {{ value.description }}
+</p>
